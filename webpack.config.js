@@ -22,7 +22,6 @@ module.exports = {
         ],
     },
     optimization: {
-        usedExports: true,
     },
     performance: {
         maxAssetSize: 1000000,
