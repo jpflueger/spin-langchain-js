@@ -1,0 +1,26 @@
+{
+  "name": "spin-langchain-js",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "npm run pack && npm run js2wasm",
+    "pack": "npx webpack",
+    "js2wasm": "spin js2wasm -o dist/spin-langchain-js.wasm dist/spin.js",
+    "stats": "npx webpack --profile --json > stats.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "langchain": "^0.0.156",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@fermyon/spin-sdk": "0.6.0"
+  }
+}
