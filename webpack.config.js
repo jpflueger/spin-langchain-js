@@ -11,6 +11,12 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            'camelcase': require.resolve('lodash/camelCase'),
+            'decamelize': require.resolve('lodash/snakeCase'),
+            'openai': false,
+            'langsmith': false,
+        }
     },
     module: {
         rules: [
@@ -22,6 +28,7 @@ module.exports = {
         ],
     },
     optimization: {
+        // minimize: false,
     },
     performance: {
         maxAssetSize: 1000000,
@@ -31,5 +38,8 @@ module.exports = {
         new webpack.optimize.LimitChunkCountPlugin({
             maxChunks: 1,
         }),
-    ],
+        new webpack.ProvidePlugin({
+            ReadableStream: 'stream-browserify',
+        }),
+    ]
 };

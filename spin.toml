@@ -9,6 +9,7 @@ version = "0.1.0"
 id = "spin-langchain-js"
 source = "dist/spin-langchain-js.wasm"
 exclude_files = ["**/node_modules"]
+ai_models = ["llama2-chat", "codellama-instruct", "all-minikm-16-v2"]
 [component.trigger]
 route = "/..."
 [component.build]
